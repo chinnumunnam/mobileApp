@@ -1,0 +1,42 @@
+<ion-view  ng-controller='empsearchCtrl'>
+  <ion-content>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" id="firstName" placeholder="Search by name or email" ng-keyup="employeeSuggestionList(name)" ng-model="name.firstName">
+        <input type="hidden" id="searchId" />
+      </label>
+      <div class="list" id="employeeSuggestionList" style="display:none;">
+        <ul ng-repeat="employeename in employeeSuggestionListArray track by $index">
+          <a href="" class="item item-icon-left" ng-click="setEmployeeName(employeename.EmployeeName,employeename.LoginId)">
+            <li>{{employeename.EmployeeName}}</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-33"></div>
+      <div class="col col-33 col-center">
+        <button class="button button-block button-positive" ng-click="employeeSearch(name)">
+          Search
+        </button>
+      </div>
+      <div class="col col-33">
+
+      </div>
+    </div>
+
+
+    <div class="row" id="empData" style="display:none;">
+        <div class="list" ng-controller="empindCtrl" ng-click="empinddetails(employeeData.data.LoginId)">
+        <a class="item item-avatar" href="#/tab/empinddetails">
+          <!--	<img src="../img/gmay.jpg">  /android_asset/www/-->
+          <h2>{{employeeData.data.FName}} {{employeeData.data.MName}} {{employeeData.data.LName}}</h2>
+          <p>Working in {{employeeData.data.PracticeId}}</p>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

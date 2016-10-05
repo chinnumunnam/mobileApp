@@ -1,0 +1,74 @@
+<ion-view>
+
+  <ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+      <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+          </button>
+        </ion-nav-buttons>
+      </ion-nav-bar>
+      <br>
+      <br>
+      <!-- Tabs view-->
+
+      <ion-tabs class="tabs-icon-top tabs-royal" ng-class="{'tabs-item-hide': $root.hideTabBar}">
+
+        <ion-tab hidden="true">
+          <ion-nav-view name="tab-side"></ion-nav-view>
+        </ion-tab>
+        <!--hidden="{{HideInstructionTab}}"-->
+        <ion-tab title="Dashboard" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/tab1">
+          <ion-nav-view name="tab-one"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Status" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/tab2">
+          <ion-nav-view name="tab-two"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>
+      <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <!-- Side Menu (left) -->
+    <ion-side-menu side="left" ng-controller="emploginCtrl">
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Menu</h1>
+      </ion-header-bar>
+
+      <ion-content>
+        <ion-list>
+
+          <!--<ion-item class="loginPage" menu-close href="#/tab/login">
+            <i class="icon ion-log-in"></i>&nbsp;Login
+        </ion-item>-->
+          <ion-item>
+
+
+          <!--  <div class="row"><img id="empProfileImage" class="full-image" style="width:180px;height:180px;border-radius:50%" src=""> </div> -->
+            <div class="row"> <img class="full-image"  style="width:180px;height:180px;border-radius:50%"  ng-src="data:image/JPEG;base64,{{employeedata.employeeImage}}"> </div>
+            <div class="row"> {{employeedata.employeeName}}</div>
+            <div class="row">{{employeedata.employeePhNumber}} </div>
+            <div class="row"> {{employeedata.employeeWork}}</div>
+
+
+          </ion-item>
+
+          <ion-item menu-close href="#/tab/empsearch">
+            <i class="icon ion-ios-search-strong"></i>&nbsp;Search Friends!
+          </ion-item>
+          <ion-item menu-close href="#/tab/releaseVersion">
+          <i class="icon ion-compose"></i>&nbsp;Release Version
+          </ion-item>
+          <ion-item menu-close ng-controller="empLogoutCtrl" ng-click="logout()">
+            <i class="icon ion-log-out"></i>&nbsp;Log Out
+          </ion-item>
+
+        </ion-list>
+      </ion-content>
+    </ion-side-menu>
+  </ion-side-menus>
+
+</ion-view>

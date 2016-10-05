@@ -1,0 +1,22 @@
+
+<ion-view hide-nav-bar="true" ng-controller='emploginCtrl'>
+
+
+<ion-content id="loginPageCSS" class="padding">
+  
+  <div id="signinCSS">Sign In</div>
+  <img id="logoCSS" src="img/ionic.png"/>
+  <div id="loginDivCSS" class="list list-inset">
+    <label id="userLabelCSS" class="item item-input">
+      <input type="text" id="username" placeholder="User Name" ng-model="name.username">
+    </label>
+    <label id="pwdLabelCSS" class="item item-input">
+      <input type="password" id="password" placeholder="Password" ng-model="name.password">
+    </label>
+  </div>
+  <ion-checkbox id="cbox" ng-model="name.checked">
+   Keep me signed in </ion-checkbox>
+  <button id="signinButtonCSS" class="button button-block button-positive" ng-click="emplogin(name)">
+  SIGN IN</button>
+</ion-content>
+</ion-view>

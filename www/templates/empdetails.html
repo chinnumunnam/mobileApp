@@ -1,0 +1,29 @@
+<ion-view view-title="Employee Details">
+  <ion-content>
+    <div class="list card" >
+
+  <div class="item item-avatar">
+
+<img id="profileImage" class="full-image">
+    <h2>{{employeeData.data.FName}} {{employeeData.data.MName}} {{employeeData.data.LName}}</h2>
+    <p>Working in {{employeeData.data.PracticeId}}</p>
+  </div>
+
+  <!--  <img class="" src="../img/ionic.png"> <img src="/android_asset/www/img/gmay.jpg"> -->
+  <div class="item item-body">
+      <img id="profileImage1" class="full-image"  style="width:180px;height:180px;border-radius:50%" src="{{base64String}}">
+       <img ng-src="data:image/JPEG;base64,{{image}}">
+
+      <br><b>Contact information<b><br>
+      Mobile Number:{{employeeData.data.CellPhoneNo}}<br>
+      Work Phone Number:{{employeeData.data.WorkPhoneNo}}<br>
+      Email Id:{{employeeData.data.Email1}}<br>
+    </div>
+  </div>
+
+  <p>
+
+
+      </p>
+  </ion-content>
+</ion-view>
